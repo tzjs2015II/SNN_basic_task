@@ -1,0 +1,5 @@
+ImageClassification/data/
+*.gz
+ImageClassification/data/mnist/MNIST/raw/t10k-images-idx3-ubyte
+ImageClassification/data/mnist/MNIST/raw/t10k-labels-idx1-ubyte
+*.pyc

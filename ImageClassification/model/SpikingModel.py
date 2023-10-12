@@ -63,6 +63,7 @@ class hybrid_neuron(nn.Module):
         # 定义了膜电位时间常数和突触常数
         self.tao_u = torch.tensor(5).to(device)  # membrane time constant
         self.tao_w = torch.tensor(1).to(device)  # synaptic constant
+        
         # 时间步长
         self.dt = torch.tensor(1).to(device)
         # 状态变量，用于存储神经元的输出状态和膜电位状态。它们被初始化为全零张量
@@ -72,6 +73,7 @@ class hybrid_neuron(nn.Module):
         self.k = self.dt / self.tao_u
         # 阈值电位，当膜电位超过这个阈值时，神经元会发放脉冲
         self.V_th = torch.tensor(0.2).to(device)
+        
         # 是一个可训练的参数矩阵，形状为(self.output_shape, self.input_shape)，
         # 用于模拟突触权重。它被初始化为全零矩阵，并设置为可计算梯度和进行反向传播
         self.P = torch.autograd.Variable(
